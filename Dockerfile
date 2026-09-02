@@ -1,5 +1,5 @@
 # ==========================================
-# ETAPA 1: COMPILACIÓN (El Taller Seguro)
+# ETAPA 1: COMPILACIÓN 
 # ==========================================
 FROM python:3.11-slim AS builder
 
@@ -19,7 +19,7 @@ RUN pip install --no-cache-dir \
     requests \
     psutil
 
-# Copiamos el código fuente (SOLO en esta etapa temporal, no va a la imagen final)
+
 WORKDIR /build
 COPY sentinelarg_server.py .
 COPY dashboard.html .
@@ -205,19 +205,17 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # ==========================================
-# COPIAR BINARIO COMPILADO Y FINALIZAR
+# DESCARGAR BINARIO PRE-COMPILADO
 # ==========================================
+
 WORKDIR /app
+RUN wget -O /app/sentinelarg_server.bin "https://github.com/alfasierra/sentinelarg/releases/download/v1.0.0/sentinelarg_server.bin" && \
+    chmod +x /app/sentinelarg_server.bin
 
-# ⚠️ CLAVE DE SEGURIDAD: Solo copiamos el BINARIO compilado desde la Etapa 1.
-# El código fuente Python (.py) NUNCA llega a esta imagen final.
-COPY --from=builder /build/sentinelarg_server.bin /app/sentinelarg_server
+# Copiar archivos de configuración
+COPY dashboard.html /app/dashboard.html
+COPY sentinelarg_config.json.example /app/sentinelarg_config.json
 
-# Damos permisos de ejecución al binario
-RUN chmod +x /app/sentinelarg_server
-
-# Puerto de la aplicación
 EXPOSE 8888
 
-# Comando de inicio por defecto
-CMD ["/app/sentinelarg_server"]
+CMD ["/app/sentinelarg_server.bin"]
