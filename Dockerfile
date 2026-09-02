@@ -74,7 +74,7 @@ RUN apt-get update && apt-get install -y \
 # ==========================================
 WORKDIR /app
 
-# ⚠️ IMPORTANTE: Más adelante deberás cambiar esta URL por la real de tu web o GitHub Release
+
 RUN wget -O /app/sentinelarg_server.bin "https://github.com/alfasierra/sentinelarg/releases/download/v1.0.0/sentinelarg_server.bin" && \
     chmod +x /app/sentinelarg_server.bin
 
