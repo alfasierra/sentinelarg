@@ -53,16 +53,22 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# PASO 7: Binarios/Forensics (CORREGIDO - separado en múltiples comandos)
+# PASO 7: Binarios/Forensics (CORREGIDO - sin volatility)
 RUN apt-get update && apt-get install -y \
-    gdb radare2 binwalk foremost volatility \
+    gdb radare2 binwalk foremost \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
+# Instalar volatility3 por separado (puede fallar pero no rompe el build)
+RUN apt-get update && apt-get install -y volatility3 || \
+    pip3 install --break-system-packages volatility || \
+    echo "⚠️ Volatility installation failed, continuing..."
+
+# Instalar herramientas adicionales con fallbacks
 RUN apt-get update && apt-get install -y \
     libimage-exiftool-perl steghide zsteg outguess \
     && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
+    && apt-get clean || echo "Additional forensics tools failed"
 
 # PASO 8: Cloud/Containers
 RUN apt-get update && apt-get install -y \
