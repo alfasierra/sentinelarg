@@ -7,7 +7,7 @@ on:
     branches: [ "main", "master" ]
 
 env:
-  DOCKER_IMAGE: alfasierra/sentinelarg
+  DOCKER_IMAGE: alfasierra07/sentinelarg
   DOCKER_TAG: latest
 
 jobs:
