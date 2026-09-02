@@ -1,0 +1,63 @@
+cat > .gitignore << 'EOF'
+# Python source code (PROTECCIÓN DE PROPIEDAD INTELECTUAL)
+*.py
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Environment variables (SENSIBLE)
+.env
+.env.local
+*.env
+
+# Compiled binaries (distribuir solo desde web)
+*.bin
+*.exe
+*.elf
+dist/
+build/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Nuitka build artifacts
+*.c
+*.cpp
+*.o
+*.so
+*.dll
+
+# Docker build cache
+.docker/
+
+# API keys and credentials
+*.key
+*.pem
+credentials.json
+EOF

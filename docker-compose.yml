@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  sentinelarg:
+    build: .
+    container_name: sentinelarg
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./sentinelarg_config.json:/app/sentinelarg_config.json
+      - sentinelarg_data:/app/data
+    network_mode: host  # Necesario para herramientas de red como Responder
+    restart: unless-stopped
+    environment:
+      - TZ=America/Argentina/Buenos_Aires
+
+volumes:
+  sentinelarg_data:
