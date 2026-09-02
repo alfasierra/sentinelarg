@@ -53,9 +53,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# PASO 7: Binarios/Forensics (CORREGIDO)
+# PASO 7: Binarios/Forensics (CORREGIDO - separado en múltiples comandos)
 RUN apt-get update && apt-get install -y \
     gdb radare2 binwalk foremost volatility \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+RUN apt-get update && apt-get install -y \
     libimage-exiftool-perl steghide zsteg outguess \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
@@ -103,12 +107,18 @@ RUN pip3 install --break-system-packages \
     pwntools ropper ropgadget \
     && rm -rf /root/.cache/pip
 
-# PASO 14: Herramientas adicionales
+# PASO 14: Herramientas adicionales con fallback
 RUN apt-get update && apt-get install -y \
     arjun paramspider amass dnsenum \
+    || echo "Some tools failed but continuing..."
+
+RUN apt-get install -y \
     wfuzz autorecon arp-scan \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean || echo "Some tools failed but continuing..."
+    || echo "wfuzz/autorecon/arp-scan failed but continuing..."
+
+RUN apt-get install -y \
+    xxd binutils \
+    || echo "xxd/binutils failed but continuing..."
 
 # PASO 15: Descargar checksec.sh
 RUN wget -q https://raw.githubusercontent.com/slimm609/checksec.sh/master/checksec -O /usr/local/bin/checksec && \
