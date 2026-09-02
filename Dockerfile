@@ -5,7 +5,7 @@ FROM kalilinux/kali-rolling
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 1. Base y herramientas esenciales de Kali (EXISTEN en repositorios)
+# 1. Base y herramientas esenciales de Kali
 RUN apt-get update && apt-get install -y \
     curl wget git python3 python3-pip golang-go \
     nmap masscan rustscan \
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# 2. Herramientas Go (INSTALAR via go install)
+# 2. Herramientas Go
 RUN go install github.com/projectdiscovery/katana/cmd/katana@latest && \
     go install github.com/lc/gau/v2/cmd/gau@latest && \
     go install github.com/hahwul/dalfox/v2@latest && \
@@ -105,36 +105,27 @@ RUN pip3 install --break-system-packages \
     && rm -rf /root/.cache/pip
 
 # Herramientas que requieren instalación especial
-# dotdotpwn
 RUN git clone https://github.com/wireghoul/dotdotpwn.git /opt/dotdotpwn && \
     cd /opt/dotdotpwn && \
-    pip3 install --break-system-packages -r requirements.txt
+    pip3 install --break-system-packages -r requirements.txt || true
 
-# xsser
 RUN apt-get update && apt-get install -y xsser || \
-    pip3 install --break-system-packages xsser || \
-    echo "xsser installation failed, skipping..."
+    pip3 install --break-system-packages xsser || true
 
-# uro
-RUN pip3 install --break-system-packages uro || echo "uro installation failed"
+RUN pip3 install --break-system-packages uro || true
 
-# jaeles
-RUN curl -sL https://raw.githubusercontent.com/jaeles-project/jaeles/master/scripts/install.sh | bash || \
-    (wget -qO- https://raw.githubusercontent.com/jaeles-project/jaeles/master/scripts/install.sh | bash) || \
-    echo "jaeles installation failed, skipping..."
+RUN curl -sL https://raw.githubusercontent.com/jaeles-project/jaeles/master/scripts/install.sh | bash || true
 
 # ==========================================
 # DESCARGAR BINARIO PRE-COMPILADO
 # ==========================================
 WORKDIR /app
 
-
 RUN wget -q --show-progress -O /app/sentinelarg_server.bin "https://github.com/alfasierra/sentinelarg/releases/download/v1.0.0/sentinelarg_server.bin" && \
     chmod +x /app/sentinelarg_server.bin
 
 COPY sentinelarg_config.json.example /app/sentinelarg_config.json
 
-# Crear directorios necesarios
 RUN mkdir -p /app/logs /app/reports /tmp/SentinelArg_files && \
     chmod 777 /app /app/logs /app/reports /tmp/SentinelArg_files
 
