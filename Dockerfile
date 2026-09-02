@@ -1,16 +1,15 @@
 # ==========================================
-# Dockerfile para GitHub Actions + Docker Hub
+# Dockerfile para SentinelArg - Versión Estable
 # ==========================================
 FROM kalilinux/kali-rolling
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# PASO 1: Herramientas base esenciales
+# PASO 1: Actualización base y herramientas esenciales
 RUN apt-get update && apt-get install -y \
-    curl wget git python3 python3-pip golang-go \
+    curl wget git python3 python3-pip python3-venv golang-go \
     nmap masscan rustscan \
-    enum4linux enum4linux-ng \
-    smbmap nbtscan \
+    enum4linux smbmap nbtscan \
     dnsutils whois \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
@@ -23,7 +22,10 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 # PASO 3: Herramientas Go
-RUN go install github.com/projectdiscovery/katana/cmd/katana@latest && \
+RUN mkdir -p /root/go/bin && \
+    export GOPATH=/root/go && \
+    export PATH=$PATH:/root/go/bin && \
+    go install github.com/projectdiscovery/katana/cmd/katana@latest && \
     go install github.com/lc/gau/v2/cmd/gau@latest && \
     go install github.com/hahwul/dalfox/v2@latest && \
     go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest && \
@@ -32,7 +34,7 @@ RUN go install github.com/projectdiscovery/katana/cmd/katana@latest && \
     go install github.com/ffuf/ffuf@latest && \
     go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest && \
     go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest && \
-    mv /root/go/bin/* /usr/local/bin/ && \
+    cp /root/go/bin/* /usr/local/bin/ && \
     rm -rf /root/go/pkg
 
 # PASO 4: Explotación
@@ -53,22 +55,15 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# PASO 7: Binarios/Forensics (CORREGIDO - sin volatility)
+# PASO 7: Binarios/Forensics
 RUN apt-get update && apt-get install -y \
-    gdb radare2 binwalk foremost \
+    gdb radare2 binwalk foremost volatility3 \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# Instalar volatility3 por separado (puede fallar pero no rompe el build)
-RUN apt-get update && apt-get install -y volatility3 || \
-    pip3 install --break-system-packages volatility || \
-    echo "⚠️ Volatility installation failed, continuing..."
-
-# Instalar herramientas adicionales con fallbacks
 RUN apt-get update && apt-get install -y \
     libimage-exiftool-perl steghide zsteg outguess \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean || echo "Additional forensics tools failed"
+    || echo "Some forensics tools failed but continuing..."
 
 # PASO 8: Cloud/Containers
 RUN apt-get update && apt-get install -y \
@@ -76,81 +71,58 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# PASO 9: Cloud Security (Python)
-RUN pip3 install --break-system-packages \
-    prowler scout-suite checkov terrascan kube-hunter kube-bench \
-    && rm -rf /root/.cache/pip
-
-# PASO 10: OSINT
+# PASO 9: OSINT
 RUN apt-get update && apt-get install -y \
     theharvester maltego spiderfoot \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-RUN pip3 install --break-system-packages \
-    sherlock-project social-analyzer dnsrecon fierce \
-    && rm -rf /root/.cache/pip
-
-# PASO 11: Wireless
+# PASO 10: Wireless
 RUN apt-get update && apt-get install -y \
     aircrack-ng kismet wireshark tshark tcpdump \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# PASO 12: CMS Security
+# PASO 11: CMS Security
 RUN apt-get update && apt-get install -y \
     wpscan joomscan droopescan cmsmap \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-# PASO 13: Python dependencies adicionales
-RUN pip3 install --break-system-packages \
+# PASO 12: Crear entorno virtual para paquetes Python
+RUN python3 -m venv /opt/sentinelarg-venv && \
+    /opt/sentinelarg-venv/bin/pip install --upgrade pip
+
+# Instalar paquetes Python en el entorno virtual (con fallback)
+RUN /opt/sentinelarg-venv/bin/pip install \
     flask requests beautifulsoup4 selenium \
     mitmproxy psutil colorama \
     reportlab pillow \
     aiohttp urllib3 \
     netexec \
     pwntools ropper ropgadget \
-    && rm -rf /root/.cache/pip
+    || echo "Some Python packages failed but continuing..."
 
-# PASO 14: Herramientas adicionales con fallback
+# PASO 13: Herramientas adicionales con fallback
 RUN apt-get update && apt-get install -y \
-    arjun paramspider amass dnsenum \
+    arjun amass dnsenum \
     || echo "Some tools failed but continuing..."
 
 RUN apt-get install -y \
     wfuzz autorecon arp-scan \
     || echo "wfuzz/autorecon/arp-scan failed but continuing..."
 
-RUN apt-get install -y \
-    xxd binutils \
-    || echo "xxd/binutils failed but continuing..."
-
-# PASO 15: Descargar checksec.sh
+# PASO 14: Descargar checksec
 RUN wget -q https://raw.githubusercontent.com/slimm609/checksec.sh/master/checksec -O /usr/local/bin/checksec && \
     chmod +x /usr/local/bin/checksec || echo "checksec download failed"
 
-# PASO 16: Descargar herramientas especiales
-RUN (git clone https://github.com/wireghoul/dotdotpwn.git /opt/dotdotpwn 2>/dev/null && \
-     pip3 install --break-system-packages -r /opt/dotdotpwn/requirements.txt 2>/dev/null) || true
-
-RUN apt-get install -y xsser || \
-    pip3 install --break-system-packages xsser || true
-
-RUN pip3 install --break-system-packages uro || true
-
-# jaeles
-RUN (curl -sL https://raw.githubusercontent.com/jaeles-project/jaeles/master/scripts/install.sh | bash 2>/dev/null) || true
-
-# ==========================================
-# DESCARGAR BINARIO PRE-COMPILADO
-# ==========================================
+# PASO 15: Descargar binario pre-compilado
 WORKDIR /app
 
 RUN wget -q --show-progress -O /app/sentinelarg_server.bin \
     "https://github.com/alfasierra/sentinelarg/releases/download/v1.0.0/sentinelarg_server.bin" && \
     chmod +x /app/sentinelarg_server.bin || \
-    echo "️ Binary download failed"
+    echo "️ Binary download failed - will use local build"
 
 COPY sentinelarg_config.json.example /app/sentinelarg_config.json
 
