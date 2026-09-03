@@ -91,3 +91,55 @@ docker build -t sentinelarg .
 
 # Run the container
 docker run -d -p 8888:8888 --name sentinelarg sentinelarg
+
+🚀 Quick Start
+Access the web interface: http://localhost:8888
+Enter your target: IP address, domain, or URL
+Select scan type:
+Quick: Fast reconnaissance (Nmap + basic scans)
+Full: Comprehensive security assessment
+Web: Web application focused scan
+Windows: Windows/Active Directory scan
+Linux: Linux server audit
+Network: Network discovery
+OSINT: Open-source intelligence gathering
+Click "Start Scan" and monitor progress in real-time
+Download PDF report when complete
+
+📋 Requirements
+System Requirements
+RAM: 4GB minimum (8GB recommended)
+Disk: 10GB free space
+OS: Linux (Kali Linux recommended), macOS, Windows (WSL2)
+Docker Requirements
+Docker Engine 20.10+
+Docker Compose 2.0+ (optional)
+
+📚 Documentation
+Full Documentation: Wiki
+API Reference: API Docs
+Troubleshooting: FAQ
+
+🤝 Contributing
+Contributions are welcome! Please read our Contributing Guidelines first.
+Fork the repository
+Create your feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+🙏 Acknowledgments
+All the amazing open-source security tools integrated in SentinelArg
+The offensive security community
+Bug bounty hunters and security researchers worldwide
+📞 Support
+Website: https://sentinelarg.com.ar/
+GitHub Issues: Report a bug
+Email: contacto@sentinelarg.com.ar
+<div align="center">
+
+Made with ❤️ by SentinelArg Team
+⭐ Star this repo if you find it useful!
+</div>
