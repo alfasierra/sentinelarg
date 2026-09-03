@@ -58,40 +58,7 @@ See [LICENSE](LICENSE) for complete terms.
 - **Compliance Mapping**: OWASP Top 10, MITRE ATT&CK, CWE, PCI-DSS
 - **Severity Classification**: Critical, High, Medium, Low, Info
 - **Exploit Database**: Integrated vulnerability references
-
----
-
-## 📦 Installation
-
-### Option 1: Docker (Recommended)
-
-```bash
-# Pull the latest image
-docker pull alfasierra07/sentinelarg:latest
-
-# Run the container
-docker run -d \
-  --name sentinelarg \
-  -p 8888:8888 \
-  --restart unless-stopped \
-  alfasierra07/sentinelarg:latest
-
-# Access the dashboard
-open http://localhost:8888
-# Or visit: http://127.0.0.1:8888
-
-### Option 2 : Build from Source
-
-# Clone the repository
-git clone https://github.com/alfasierra/sentinelarg.git
-cd sentinelarg
-
-# Build the Docker image
-docker build -t sentinelarg .
-
-# Run the container
-docker run -d -p 8888:8888 --name sentinelarg sentinelarg
-
+  
 🚀 Quick Start
 Access the web interface: http://localhost:8888
 Enter your target: IP address, domain, or URL
@@ -138,8 +105,42 @@ Bug bounty hunters and security researchers worldwide
 Website: https://sentinelarg.com.ar/
 GitHub Issues: Report a bug
 Email: contacto@sentinelarg.com.ar
-<div align="center">
+
 
 Made with ❤️ by SentinelArg Team
 ⭐ Star this repo if you find it useful!
-</div>
+
+---
+
+## 📦 Installation
+
+### Option 1: Docker (Recommended)
+
+```bash
+# Pull the latest image
+docker pull alfasierra07/sentinelarg:latest
+
+# Run the container
+docker run -d \
+  --name sentinelarg \
+  -p 8888:8888 \
+  --restart unless-stopped \
+  alfasierra07/sentinelarg:latest
+
+# Access the dashboard
+open http://localhost:8888
+# Or visit: http://127.0.0.1:8888
+
+### Option 2 : Build from Source
+
+# Clone the repository
+git clone https://github.com/alfasierra/sentinelarg.git
+cd sentinelarg
+
+# Build the Docker image
+docker build -t sentinelarg .
+
+# Run the container
+docker run -d -p 8888:8888 --name sentinelarg sentinelarg
+
+
