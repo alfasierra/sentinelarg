@@ -4,6 +4,8 @@
 # ==========================================
 FROM kalilinux/kali-rolling
 
+# FORCE REBUILD: v1.0.1 - 2026-09-03
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 # ==========================================
