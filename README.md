@@ -1,146 +1,272 @@
-# ️ SentinelArg - Advanced Offensive Security Platform
+# 🛡️ SentinelArg - Advanced Offensive Security Platform
 
-![SentinelArg Dashboard](screenshots/dashboard.png)
+<div align="center">
 
-**SentinelArg** is an AI-powered offensive security automation platform designed for authorized penetration testing, red team operations, CTF competitions, and security research.
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/alfasierra?label=Sponsors&logo=githubsponsors&style=for-the-badge)](https://github.com/sponsors/alfasierra)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alfasierra07/sentinelarg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/alfasierra07/sentinelarg)
+[![GitHub Stars](https://img.shields.io/github/stars/alfasierra/sentinelarg?style=for-the-badge&logo=github)](https://github.com/alfasierra/sentinelarg)
+[![License](https://img.shields.io/github/license/alfasierra/sentinelarg?style=for-the-badge)](LICENSE)
+
+**¿Te gusta SentinelArg? [Apoya el proyecto](https://github.com/sponsors/alfasierra) ☕**
+
+</div>
+
+---
+
+## 📋 Descripción
+
+**SentinelArg** es una plataforma avanzada de seguridad ofensiva impulsada por IA, diseñada para pruebas de penetración autorizadas, operaciones de red team, competiciones CTF e investigación de seguridad.
+
+Integra **150+ herramientas de seguridad** en una plataforma unificada con automatización inteligente, generación de reportes profesionales y capacidades de inteligencia de vulnerabilidades.
 
 🌐 **Website**: [https://sentinelarg.com.ar/](https://sentinelarg.com.ar/)
 
 ---
 
-## ⚖️ Legal Notice
+## ⚖️ Aviso Legal
 
-**This tool is intended for AUTHORIZED security testing ONLY.**
+**Esta herramienta está destinada ÚNICAMENTE para pruebas de seguridad AUTORIZADAS.**
 
-- ✅ Authorized penetration testing
-- ✅ Ethical security research
-- ✅ CTF (Capture The Flag) competitions
-- ✅ Security audits with explicit written authorization
+- ✅ Pruebas de penetración autorizadas
+- ✅ Investigación de seguridad ética
+- ✅ Competiciones CTF (Capture The Flag)
+- ✅ Auditorías de seguridad con autorización explícita por escrito
 
-**Unauthorized use is ILLEGAL and may result in civil and criminal prosecution.**
+**El uso no autorizado es ILEGAL y puede resultar en enjuiciamiento civil y penal.**
 
-See [LICENSE](LICENSE) for complete terms.
+Ver [LICENSE](LICENSE) para términos completos.
 
 ---
 
-## 🌟 Features
+## 🌟 Características Principales
 
-### 🌐 Web Application Scanning
-- **Technology Detection**: WhatWeb, Wafw00f, ...
-- **Content Discovery**: Katana, Gau, FFUF, Dirsearch, ...
-- **Vulnerability Scanning**: Nuclei, Dalfox, Nikto, ...
-- **SSL/TLS Analysis**: testssl.sh
-- **Secret Detection**: Gitleaks
+### 🌐 Escaneo de Aplicaciones Web
+- **Detección de Tecnologías**: WhatWeb, Wafw00f
+- **Descubrimiento de Contenido**: Katana, Gau, FFUF, Dirsearch
+- **Escaneo de Vulnerabilidades**: Nuclei, Dalfox, Nikto
+- **Análisis SSL/TLS**: testssl.sh
+- **Detección de Secretos**: Gitleaks
 
 ### 🪟 Windows & Active Directory
-- **Network Enumeration**: Nmap, NetExec, Nbtscan, ...
-- **AD Assessment**: BloodHound, Certipy, ...
-- **Credential Harvesting**: Responder (LLMNR/NBT-NS)
-- **Share Enumeration**: SMBMap, Enum4linux, ...
+- **Enumeración de Red**: Nmap, NetExec, Nbtscan
+- **Evaluación AD**: BloodHound, Certipy
+- **Harvesting de Credenciales**: Responder (LLMNR/NBT-NS)
+- **Enumeración de Shares**: SMBMap, Enum4linux
 
-### 🐧 Linux Server Auditing
-- **Service Detection**: Nmap, SSH-Audit
-- **Vulnerability Assessment**: Nuclei
-- **Configuration Analysis**: WhatWeb
+### 🐧 Auditoría de Servidores Linux
+- **Detección de Servicios**: Nmap, SSH-Audit
+- **Evaluación de Vulnerabilidades**: Nuclei
+- **Análisis de Configuración**: WhatWeb
 
-### 🔌 Network Discovery
-- **Port Scanning**: Nmap (comprehensive), Rustscan, Masscan, ...
-- **OS Detection**: Advanced fingerprinting
-- **Service Enumeration**: Nbtscan, ARP-Scan
+### 🔌 Descubrimiento de Red
+- **Escaneo de Puertos**: Nmap, Rustscan, Masscan
+- **Detección de SO**: Fingerprinting avanzado
+- **Enumeración de Servicios**: Nbtscan, ARP-Scan
 
-###  AI-Powered Intelligence
-- **Automatic Exploit Search**: Searchsploit, Exploit-DB API, Metasploit, ...
-- **Smart Tool Selection**: Context-aware parameter optimization
-- **Intelligent Error Recovery**: Automatic fallback strategies
+### 🧠 Inteligencia Impulsada por IA
+- **Búsqueda Automática de Exploits**: Searchsploit, Exploit-DB API, Metasploit
+- **Selección Inteligente de Herramientas**: Optimización contextual de parámetros
+- **Recuperación Inteligente de Errores**: Estrategias automáticas de fallback
 
-### 📊 Professional Reporting
-- **Executive PDF Reports**: Clean, professional format
-- **Compliance Mapping**: OWASP Top 10, MITRE ATT&CK, CWE, PCI-DSS
-- **Severity Classification**: Critical, High, Medium, Low, Info
-- **Exploit Database**: Integrated vulnerability references
-  
-🚀 Quick Start
-Access the web interface: http://localhost:8888
-Enter your target: IP address, domain, or URL
-Select scan type:
-Quick: Fast reconnaissance (Nmap + basic scans)
-Full: Comprehensive security assessment
-Web: Web application focused scan
-Windows: Windows/Active Directory scan
-Linux: Linux server audit
-Network: Network discovery
-OSINT: Open-source intelligence gathering
-Click "Start Scan" and monitor progress in real-time
-Download PDF report when complete
-
-📋 Requirements
-System Requirements
-RAM: 4GB minimum (8GB recommended)
-Disk: 10GB free space
-OS: Linux (Kali Linux recommended), macOS, Windows (WSL2)
-Docker Requirements
-Docker Engine 20.10+
-Docker Compose 2.0+ (optional)
-
-📚 Documentation
-Full Documentation: Wiki
-API Reference: API Docs
-Troubleshooting: FAQ
-
-🤝 Contributing
-Contributions are welcome! Please read our Contributing Guidelines first.
-Fork the repository
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-🙏 Acknowledgments
-All the amazing open-source security tools integrated in SentinelArg
-The offensive security community
-Bug bounty hunters and security researchers worldwide
-📞 Support
-Website: https://sentinelarg.com.ar/
-GitHub Issues: Report a bug
-Email: contacto@sentinelarg.com.ar
-
-
-Made with ❤️ by SentinelArg Team
-⭐ Star this repo if you find it useful!
+### 📊 Reportes Profesionales
+- **Reportes PDF Ejecutivos**: Formato limpio y profesional
+- **Mapeo de Compliance**: OWASP Top 10, MITRE ATT&CK, CWE, PCI-DSS
+- **Clasificación de Severidad**: Crítico, Alto, Medio, Bajo, Info
+- **Base de Datos de Exploits**: Referencias integradas de vulnerabilidades
 
 ---
 
-## 📦 Installation
+##  Instalación
 
-### Option 1: Docker (Recommended)
+### Opción 1: Docker (Recomendado)
 
 ```bash
-# Pull the latest image
+# Pull de la imagen desde Docker Hub
 docker pull alfasierra07/sentinelarg:latest
 
-# Run the container
+# Ejecutar el contenedor
 docker run -d \
   --name sentinelarg \
   -p 8888:8888 \
   --restart unless-stopped \
   alfasierra07/sentinelarg:latest
 
-# Access the dashboard
-open http://localhost:8888
-# Or visit: http://127.0.0.1:8888
+# Acceder al dashboard
+# Abre tu navegador en: http://localhost:8888
+```
 
-### Option 2 : Build from Source
+### Opción 2: Build desde Source
 
-# Clone the repository
+```bash
+# Clonar el repositorio
 git clone https://github.com/alfasierra/sentinelarg.git
 cd sentinelarg
 
-# Build the Docker image
+# Build de la imagen Docker
 docker build -t sentinelarg .
 
-# Run the container
+# Ejecutar el contenedor
 docker run -d -p 8888:8888 --name sentinelarg sentinelarg
+```
+
+---
+
+## 🚀 Quick Start
+
+1. **Acceder a la interfaz web**: `http://localhost:8888`
+
+2. **Ingresar tu target**: Dirección IP, dominio o URL
+
+3. **Seleccionar tipo de escaneo**:
+   - **Quick**: Reconocimiento rápido (Nmap + escaneos básicos)
+   - **Full**: Evaluación de seguridad comprehensiva
+   - **Web**: Escaneo enfocado en aplicaciones web
+   - **Windows**: Escaneo Windows/Active Directory
+   - **Linux**: Auditoría de servidor Linux
+   - **Network**: Descubrimiento de red
+   - **OSINT**: Recolección de inteligencia de fuentes abiertas
+
+4. **Click en "Start Scan"** y monitorea el progreso en tiempo real
+
+5. **Descargar reporte PDF** cuando complete
+
+---
+
+## 📋 Requisitos
+
+### Requisitos del Sistema
+- **RAM**: 4GB mínimo (8GB recomendado)
+- **Disco**: 10GB espacio libre
+- **OS**: Linux (Kali Linux recomendado), macOS, Windows (WSL2)
+
+### Requisitos Docker
+- Docker Engine 20.10+
+- Docker Compose 2.0+ (opcional)
+
+---
+
+## 🔧 Configuración
+
+Edita `sentinelarg_config.json` para personalizar:
+
+```json
+{
+  "company_name": "Tu Empresa",
+  "report_title": "Reporte de Evaluación de Seguridad",
+  "primary_color": "#8B0000",
+  "footer_text": "Confidencial - SentinelArg Red AI"
+}
+```
+
+---
+
+## 📚 Documentación
+
+- **Documentación Completa**: [Wiki](https://github.com/alfasierra/sentinelarg/wiki)
+- **Referencia de API**: [API Docs](https://github.com/alfasierra/sentinelarg/wiki/API)
+- **Solución de Problemas**: [FAQ](https://github.com/alfasierra/sentinelarg/wiki/FAQ)
+
+---
+
+## 💖 Sponsors
+
+SentinelArg es un proyecto de código abierto mantenido con ❤️. 
+Si te resulta útil para tu trabajo de seguridad, considera apoyarlo:
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-SentinelArg-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/alfasierra)
+
+### ¿Por qué sponsorizar?
+
+- ✅ **100% del dinero** va directamente al desarrollo
+- ✅ **Transparencia total**: reportes mensuales de uso de fondos
+- ✅ **Comunidad activa**: acceso a Discord privado
+- ✅ **Influencia real**: votas en el roadmap del proyecto
+
+[Ver todos los tiers de sponsors →](https://github.com/sponsors/alfasierra)
+
+---
+
+## 🤝 Contribuyendo
+
+¡Las contribuciones son bienvenidas! Por favor lee nuestras [Guías de Contribución](CONTRIBUTING.md) primero.
+
+1. Haz fork del repositorio
+2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la branch (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+---
+
+## 🔧 Herramientas Integradas
+
+SentinelArg integra más de **150 herramientas de seguridad**:
+
+### Reconocimiento
+- Nmap, Masscan, Rustscan, Autorecon
+- Amass, Subfinder, theHarvester
+- DNSrecon, Fierce, DNSenum
+
+### Escaneo Web
+- Nikto, Nuclei, Dalfox, Wpscan
+- Gobuster, Dirsearch, Feroxbuster, FFUF
+- WhatWeb, Wafw00f, testssl.sh
+
+### Explotación
+- Metasploit, SQLMap, Hydra
+- John, Hashcat, Medusa
+- Searchsploit, Exploit-DB
+
+### Active Directory
+- BloodHound, Certipy, Impacket
+- Enum4linux, SMBMap, NetExec
+- Responder, Nbtscan
+
+### Forensics
+- Binwalk, Foremost, Volatility
+- Exiftool, Steghide, Zsteg
+- Strings, XXD, File
+
+### Cloud Security
+- Prowler, Scout-Suite, Trivy
+- Kube-hunter, Kube-bench
+- Checkov, Terrascan
+
+... y muchas más.
+
+---
+
+## 📞 Soporte
+
+- **Website**: [https://sentinelarg.com.ar/](https://sentinelarg.com.ar/)
+- **GitHub Issues**: [Reportar un bug](https://github.com/alfasierra/sentinelarg/issues)
+- **Email**: support@sentinelarg.com.ar
+
+---
+
+##  Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+##  Agradecimientos
+
+- Todas las increíbles herramientas de seguridad open-source integradas en SentinelArg
+- La comunidad de seguridad ofensiva
+- Bug bounty hunters e investigadores de seguridad de todo el mundo
+
+---
+
+<div align="center">
+
+**Hecho con ❤️ por el Equipo SentinelArg**
+
+⭐ ¡Dale estrella a este repo si lo encuentras útil!
+
+</div>
+```
+
+
 
 
