@@ -182,7 +182,7 @@ Si te resulta útil para tu trabajo de seguridad, considera apoyarlo:
 - ✅ **Comunidad activa**: acceso a Discord privado
 - ✅ **Influencia real**: votas en el roadmap del proyecto
 
-[Ver todos los tiers de sponsors →](https://github.com/sponsors/alfasierra)
+
 
 ---
 
