@@ -11,261 +11,164 @@
 
 </div>
 
+<div align="center">
+
+[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge)](https://sentinelarg.com.ar)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)](https://www.docker.com/)
+[![License](https://img.shields.io/badge/License-Proprietary_EULA-red?style=for-the-badge)](EULA.md)
+
+**Plataforma profesional de seguridad ofensiva impulsada por Inteligencia Artificial.**
+
+🌐 **Website**: [https://sentinelarg.com.ar/](https://sentinelarg.com.ar/)  
+📧 **Soporte**: soporte@sentinelarg.com.ar
+
+</div>
+
 ---
 
-## 📋 Descripción
+## ⚠️ Aviso Legal y Uso Responsable
 
-**SentinelArg** es una plataforma avanzada de seguridad ofensiva impulsada por IA, diseñada para pruebas de penetración autorizadas, operaciones de red team, competiciones CTF e investigación de seguridad.
+**SentinelArg es una herramienta de evaluación de seguridad ofensiva destinada ÚNICAMENTE para uso autorizado.**
 
-Integra **150+ herramientas de seguridad** en una plataforma unificada con automatización inteligente, generación de reportes profesionales y capacidades de inteligencia de vulnerabilidades.
+- ✅ Pruebas de penetración con autorización explícita y por escrito.
+- ✅ Auditorías de seguridad y Red Team operations.
+- ✅ Competiciones CTF (Capture The Flag) y entornos de laboratorio controlados.
+- ✅ Investigación de seguridad ética.
 
-🌐 **Website**: [https://sentinelarg.com.ar/](https://sentinelarg.com.ar/)
-
----
-
-## ⚖️ Aviso Legal
-
-**Esta herramienta está destinada ÚNICAMENTE para pruebas de seguridad AUTORIZADAS.**
-
-- ✅ Pruebas de penetración autorizadas
-- ✅ Investigación de seguridad ética
-- ✅ Competiciones CTF (Capture The Flag)
-- ✅ Auditorías de seguridad con autorización explícita por escrito
-
-**El uso no autorizado es ILEGAL y puede resultar en enjuiciamiento civil y penal.**
-
-Ver [LICENSE](LICENSE) para términos completos.
+**El uso no autorizado de esta herramienta es ILEGAL y puede resultar en acciones civiles y penales.**  
+Al instalar y utilizar SentinelArg, usted acepta los términos establecidos en el [Acuerdo de Licencia de Usuario Final (EULA.md)](EULA.md).
 
 ---
 
 ## 🌟 Características Principales
 
+### 🧠 Inteligencia Artificial Integrada
+- **Orquestador IA**: Correlación automática de hallazgos y eliminación de falsos positivos.
+- **Selección Inteligente de Herramientas**: Adapta el escaneo según los puertos y servicios detectados.
+- **Asistente de Seguridad**: Chat interactivo con LLM local (Ollama) para explicar vulnerabilidades y recomendar remediación.
+
 ### 🌐 Escaneo de Aplicaciones Web
-- **Detección de Tecnologías**: WhatWeb, Wafw00f
-- **Descubrimiento de Contenido**: Katana, Gau, FFUF, Dirsearch
-- **Escaneo de Vulnerabilidades**: Nuclei, Dalfox, Nikto
-- **Análisis SSL/TLS**: testssl.sh
-- **Detección de Secretos**: Gitleaks
+- **Detección de Tecnologías**: WhatWeb, Wafw00f.
+- **Descubrimiento de Contenido**: Katana, Gau, FFUF, Gobuster.
+- **Escaneo de Vulnerabilidades**: Nuclei, Dalfox, Nikto.
+- **Análisis SSL/TLS**: testssl.sh, Nmap NSE scripts.
 
 ### 🪟 Windows & Active Directory
-- **Enumeración de Red**: Nmap, NetExec, Nbtscan
-- **Evaluación AD**: BloodHound, Certipy
-- **Harvesting de Credenciales**: Responder (LLMNR/NBT-NS)
-- **Enumeración de Shares**: SMBMap, Enum4linux
+- **Enumeración de Red**: Nmap, NetExec (CrackMapExec), Nbtscan.
+- **Evaluación AD**: Enumeración de usuarios, shares y políticas (SMBMap, Enum4linux).
+- **Harvesting de Credenciales**: Detección de protocolos vulnerables (LLMNR/NBT-NS).
 
 ### 🐧 Auditoría de Servidores Linux
-- **Detección de Servicios**: Nmap, SSH-Audit
-- **Evaluación de Vulnerabilidades**: Nuclei
-- **Análisis de Configuración**: WhatWeb
-
-### 🔌 Descubrimiento de Red
-- **Escaneo de Puertos**: Nmap, Rustscan, Masscan
-- **Detección de SO**: Fingerprinting avanzado
-- **Enumeración de Servicios**: Nbtscan, ARP-Scan
-
-### 🧠 Inteligencia Impulsada por IA
-- **Búsqueda Automática de Exploits**: Searchsploit, Exploit-DB API, Metasploit
-- **Selección Inteligente de Herramientas**: Optimización contextual de parámetros
-- **Recuperación Inteligente de Errores**: Estrategias automáticas de fallback
+- **Detección de Servicios**: Nmap, SSH-Audit.
+- **Análisis de Configuración**: Detección de cifrados débiles, protocolos obsoletos y misconfiguraciones.
 
 ### 📊 Reportes Profesionales
-- **Reportes PDF Ejecutivos**: Formato limpio y profesional
-- **Mapeo de Compliance**: OWASP Top 10, MITRE ATT&CK, CWE, PCI-DSS
-- **Clasificación de Severidad**: Crítico, Alto, Medio, Bajo, Info
-- **Base de Datos de Exploits**: Referencias integradas de vulnerabilidades
+- **Reportes PDF Ejecutivos**: Formato limpio, profesional y listo para entregar al cliente.
+- **Mapeo de Compliance**: OWASP Top 10, MITRE ATT&CK, CWE, PCI-DSS.
+- **Clasificación de Severidad**: Crítico, Alto, Medio, Bajo, Informativo.
 
 ---
 
-##  Instalación
+## 🚀 Instalación Rápida (Recomendada)
 
-### Opción 1: Docker (Recomendado)
+SentinelArg está diseñado para ser desplegado en segundos utilizando Docker. No es necesario instalar dependencias manualmente en su sistema operativo.
 
+### Requisitos Previos
+- Sistema operativo: Linux (Kali Linux, Ubuntu, Debian recomendados), macOS o Windows (WSL2).
+- **Docker** y **Docker Compose** instalados.
+- Mínimo 8GB de RAM (16GB o más, recomendados para el motor de IA local).
+- GPU NVIDIA (Opcional, pero recomendada para aceleración de IA).
+
+### Pasos de Instalación
+
+1. **Descargue el paquete de SentinelArg** (ZIP o clonación del repositorio privado) y navegue a la carpeta:
+   ```bash
+   cd sentinelarg-client-release
+   ```
+
+2. **Ejecute el script de instalación automatizado** como root:
+   ```bash
+   sudo ./install.sh
+   ```
+   *Este script verificará Docker, creará los directorios necesarios, descargará la imagen pre-compilada más reciente y levantará los contenedores.*
+
+3. **Acceda al Panel de Control**:
+   Abra su navegador web y diríjase a:  
+   🔗 **[http://localhost:8888](http://localhost:8888)**
+
+---
+
+## 🔑 Activación de Licencia
+
+SentinelArg requiere una licencia válida para operar en modo producción. 
+
+1. Adquiera su licencia en: [https://sentinelarg.com.ar/licencias](https://sentinelarg.com.ar/licencias)
+2. Coloque el archivo de licencia recibido en la carpeta de instalación con el nombre `sentinelarg.license` (o siga las instrucciones de activación proporcionadas en su correo de compra).
+3. Reinicie el servicio para aplicar la licencia:
+   ```bash
+   docker-compose restart sentinelarg-core
+   ```
+
+---
+
+## 🔄 Actualización del Sistema
+
+Mantener SentinelArg actualizado es crucial para contar con las últimas plantillas de vulnerabilidades y correcciones de seguridad. El proceso es seguro y preserva su base de datos y configuraciones.
+
+Simplemente ejecute:
 ```bash
-# Pull de la imagen desde Docker Hub
-docker pull alfasierra07/sentinelarg:latest
-
-# Ejecutar el contenedor
-docker run -d \
-  --name sentinelarg \
-  -p 8888:8888 \
-  --restart unless-stopped \
-  alfasierra07/sentinelarg:latest
-
-# Acceder al dashboard
-# Abre tu navegador en: http://localhost:8888
+sudo ./update.sh
 ```
-
-### Opción 2: Build desde Source
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/alfasierra/sentinelarg.git
-cd sentinelarg
-
-# Build de la imagen Docker
-docker build -t sentinelarg .
-
-# Ejecutar el contenedor
-docker run -d -p 8888:8888 --name sentinelarg sentinelarg
-```
+*El script realizará automáticamente una copia de seguridad de la base de datos, descargará la nueva imagen, reiniciará los servicios y limpiará las versiones antiguas.*
 
 ---
 
-## 🚀 Quick Start
+## 🔧 Configuración Avanzada
 
-1. **Acceder a la interfaz web**: `http://localhost:8888`
-
-2. **Ingresar tu target**: Dirección IP, dominio o URL
-
-3. **Seleccionar tipo de escaneo**:
-   - **Quick**: Reconocimiento rápido (Nmap + escaneos básicos)
-   - **Full**: Evaluación de seguridad comprehensiva
-   - **Web**: Escaneo enfocado en aplicaciones web
-   - **Windows**: Escaneo Windows/Active Directory
-   - **Linux**: Auditoría de servidor Linux
-   - **Network**: Descubrimiento de red
-   - **OSINT**: Recolección de inteligencia de fuentes abiertas
-
-4. **Click en "Start Scan"** y monitorea el progreso en tiempo real
-
-5. **Descargar reporte PDF** cuando complete
-
----
-
-## 📋 Requisitos
-
-### Requisitos del Sistema
-- **RAM**: 4GB mínimo (8GB recomendado)
-- **Disco**: 10GB espacio libre
-- **OS**: Linux (Kali Linux recomendado), macOS, Windows (WSL2)
-
-### Requisitos Docker
-- Docker Engine 20.10+
-- Docker Compose 2.0+ (opcional)
-
----
-
-## 🔧 Configuración
-
-Edita `sentinelarg_config.json` para personalizar:
+Puede personalizar los reportes PDF y el comportamiento de la plataforma editando el archivo `sentinelarg_config.json`:
 
 ```json
 {
-  "company_name": "Tu Empresa",
-  "report_title": "Reporte de Evaluación de Seguridad",
+  "company_name": "Su Empresa de Ciberseguridad",
+  "report_title": "Informe de Evaluación de Seguridad",
   "primary_color": "#8B0000",
-  "footer_text": "Confidencial - SentinelArg Red AI"
+  "footer_text": "Documento Confidencial - Generado por SentinelArg Red AI"
 }
 ```
 
 ---
 
-## 📚 Documentación
+## 📚 Documentación y Soporte
 
-- **Documentación Completa**: [Wiki](https://github.com/alfasierra/sentinelarg/wiki)
+- **Guía de Usuario Completa**: [Wiki de SentinelArg](https://github.com/alfasierra/sentinelarg/wiki)
 - **Referencia de API**: [API Docs](https://github.com/alfasierra/sentinelarg/wiki/API)
-- **Solución de Problemas**: [FAQ](https://github.com/alfasierra/sentinelarg/wiki/FAQ)
+- **Preguntas Frecuentes (FAQ)**: [FAQ](https://github.com/alfasierra/sentinelarg/wiki/FAQ)
+
+Si necesita asistencia técnica, no dude en contactarnos a **soporte@sentinelarg.com.ar**.
 
 ---
 
-## 💖 Sponsors
+## 🛡️ Herramientas Integradas
 
-SentinelArg es un proyecto de código abierto mantenido con ❤️. 
-Si te resulta útil para tu trabajo de seguridad, considera apoyarlo:
+SentinelArg orquesta de forma transparente más de **150 herramientas de seguridad** de la industria, incluyendo:
+- **Reconocimiento**: Nmap, Masscan, Rustscan, Amass, Subfinder.
+- **Web**: Nuclei, Nikto, Dalfox, Gobuster, FFUF, WhatWeb.
+- **Explotación**: Metasploit Framework, SQLMap, Hydra, Hashcat.
+- **Red & AD**: NetExec, SMBMap, Enum4linux, Responder.
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-SentinelArg-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/alfasierra)
-
-### ¿Por qué sponsorizar?
-
-- ✅ **100% del dinero** va directamente al desarrollo
-- ✅ **Transparencia total**: reportes mensuales de uso de fondos
-- ✅ **Comunidad activa**: acceso a Discord privado
-- ✅ **Influencia real**: votas en el roadmap del proyecto
-
-
-
----
-
-## 🤝 Contribuyendo
-
-¡Las contribuciones son bienvenidas! Por favor lee nuestras [Guías de Contribución](CONTRIBUTING.md) primero.
-
-1. Haz fork del repositorio
-2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la branch (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
----
-
-## 🔧 Herramientas Integradas
-
-SentinelArg integra más de **150 herramientas de seguridad**:
-
-### Reconocimiento
-- Nmap, Masscan, Rustscan, Autorecon
-- Amass, Subfinder, theHarvester
-- DNSrecon, Fierce, DNSenum
-
-### Escaneo Web
-- Nikto, Nuclei, Dalfox, Wpscan
-- Gobuster, Dirsearch, Feroxbuster, FFUF
-- WhatWeb, Wafw00f, testssl.sh
-
-### Explotación
-- Metasploit, SQLMap, Hydra
-- John, Hashcat, Medusa
-- Searchsploit, Exploit-DB
-
-### Active Directory
-- BloodHound, Certipy, Impacket
-- Enum4linux, SMBMap, NetExec
-- Responder, Nbtscan
-
-### Forensics
-- Binwalk, Foremost, Volatility
-- Exiftool, Steghide, Zsteg
-- Strings, XXD, File
-
-### Cloud Security
-- Prowler, Scout-Suite, Trivy
-- Kube-hunter, Kube-bench
-- Checkov, Terrascan
-
-... y muchas más.
-
----
-
-## 📞 Soporte
-
-- **Website**: [https://sentinelarg.com.ar/](https://sentinelarg.com.ar/)
-- **GitHub Issues**: [Reportar un bug](https://github.com/alfasierra/sentinelarg/issues)
-- **Email**: support@sentinelarg.com.ar
-
----
-
-##  Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-##  Agradecimientos
-
-- Todas las increíbles herramientas de seguridad open-source integradas en SentinelArg
-- La comunidad de seguridad ofensiva
-- Bug bounty hunters e investigadores de seguridad de todo el mundo
+*(Nota: Todas las herramientas se ejecutan dentro de contenedores Docker aislados para garantizar la estabilidad y seguridad de su sistema anfitrión).*
 
 ---
 
 <div align="center">
 
-**Hecho con ❤️ por el Equipo SentinelArg**
-
-⭐ ¡Dale estrella a este repo si lo encuentras útil!
+**Desarrollado con ❤️ por el Equipo de SentinelArg**  
+*Protegiendo el mundo digital, una vulnerabilidad a la vez.*
 
 </div>
 ```
+
+
 
 
 
