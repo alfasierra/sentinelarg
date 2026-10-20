@@ -2,10 +2,8 @@
 
 <div align="center">
 
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/alfasierra?label=Sponsors&logo=githubsponsors&style=for-the-badge)](https://github.com/sponsors/alfasierra)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alfasierra07/sentinelarg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/alfasierra07/sentinelarg)
 [![GitHub Stars](https://img.shields.io/github/stars/alfasierra/sentinelarg?style=for-the-badge&logo=github)](https://github.com/alfasierra/sentinelarg)
-[![License](https://img.shields.io/github/license/alfasierra/sentinelarg?style=for-the-badge)](LICENSE)
 
 **¿Te gusta SentinelArg? [Apoya el proyecto](https://github.com/sponsors/alfasierra) ☕**
 
