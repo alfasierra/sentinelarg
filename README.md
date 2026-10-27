@@ -104,7 +104,7 @@ SentinelArg requiere una licencia válida para operar en modo producción.
 2. Coloque el archivo de licencia recibido en la carpeta de instalación con el nombre `sentinelarg.license` (o siga las instrucciones de activación proporcionadas en su correo de compra).
 3. Reinicie el servicio para aplicar la licencia:
    ```bash
-   docker-compose restart sentinelarg-core
+   docker-compose restart 
    ```
 
 ---
