@@ -79,7 +79,7 @@ SentinelArg está diseñado para ser desplegado en segundos utilizando Docker. N
 
 ### Pasos de Instalación
 
-1. **Descargue el paquete de SentinelArg** (ZIP o clonación del repositorio privado , wget https://github.com/....-client.tar.gz), descomprima tar -xf sentinelarg-v1.0.1-client.tar.gz y navegue a la carpeta:
+1. **Descargue el paquete de SentinelArg** (ZIP o clonación del repositorio privado , wget https://github.com/....-client.tar.gz), descomprima tar -xf sentinelarg-v...-client.tar.gz y navegue a la carpeta:
    ```bash
    cd sentinelarg-client-release
    ```
