@@ -83,7 +83,7 @@ SentinelArg está diseñado para ser desplegado en segundos utilizando Docker. N
    ```bash
    cd sentinelarg-client-release
    ```
-
+    (otorgar permisos "chmod +x update.sh  install.sh activate.sh )
 2. **Ejecute el script de instalación automatizado** como root:
    ```bash
    sudo ./install.sh
