@@ -46,18 +46,18 @@ Al instalar y utilizar SentinelArg, usted acepta los términos establecidos en e
 - **Asistente de Seguridad**: Chat interactivo con LLM local (Ollama) para explicar vulnerabilidades y recomendar remediación.
 
 ### 🌐 Escaneo de Aplicaciones Web
-- **Detección de Tecnologías**: WhatWeb, Wafw00f.
-- **Descubrimiento de Contenido**: Katana, Gau, FFUF, Gobuster.
-- **Escaneo de Vulnerabilidades**: Nuclei, Dalfox, Nikto.
-- **Análisis SSL/TLS**: testssl.sh, Nmap NSE scripts.
+- **Detección de Tecnologías**: WhatWeb, Wafw00f...
+- **Descubrimiento de Contenido**: Katana, Gau, FFUF, Gobuster...
+- **Escaneo de Vulnerabilidades**: Nuclei, Dalfox, Nikto...
+- **Análisis SSL/TLS**: testssl.sh, Nmap NSE scripts...
 
 ### 🪟 Windows & Active Directory
-- **Enumeración de Red**: Nmap, NetExec (CrackMapExec), Nbtscan.
-- **Evaluación AD**: Enumeración de usuarios, shares y políticas (SMBMap, Enum4linux).
-- **Harvesting de Credenciales**: Detección de protocolos vulnerables (LLMNR/NBT-NS).
+- **Enumeración de Red**: Nmap, NetExec (CrackMapExec), Nbtscan...
+- **Evaluación AD**: Enumeración de usuarios, shares y políticas (SMBMap, Enum4linux)...
+- **Harvesting de Credenciales**: Detección de protocolos vulnerables (LLMNR/NBT-NS)...
 
 ### 🐧 Auditoría de Servidores Linux
-- **Detección de Servicios**: Nmap, SSH-Audit.
+- **Detección de Servicios**: Nmap, SSH-Audit...
 - **Análisis de Configuración**: Detección de cifrados débiles, protocolos obsoletos y misconfiguraciones.
 
 ### 📊 Reportes Profesionales
@@ -101,7 +101,7 @@ SentinelArg está diseñado para ser desplegado en segundos utilizando Docker. N
 SentinelArg requiere una licencia válida para operar en modo producción. 
 
 1. Adquiera su licencia en: [https://sentinelarg.com.ar/licencias](https://sentinelarg.com.ar/licencias)
-2. Coloque el archivo de licencia recibido en la carpeta de instalación con el nombre `sentinelarg.license` (o siga las instrucciones de activación proporcionadas en su correo de compra).
+2. Siga las instrucciones de activación proporcionadas en su correo de compra.
 3. Reinicie el servicio para aplicar la licencia:
    ```bash
    docker-compose restart 
@@ -149,10 +149,10 @@ Si necesita asistencia técnica, no dude en contactarnos a **soporte@sentinelarg
 ## 🛡️ Herramientas Integradas
 
 SentinelArg orquesta de forma transparente más de **150 herramientas de seguridad** de la industria, incluyendo:
-- **Reconocimiento**: Nmap, Masscan, Rustscan, Amass, Subfinder.
-- **Web**: Nuclei, Nikto, Dalfox, Gobuster, FFUF, WhatWeb.
-- **Explotación**: Metasploit Framework, SQLMap, Hydra, Hashcat.
-- **Red & AD**: NetExec, SMBMap, Enum4linux, Responder.
+- **Reconocimiento**: Nmap, Masscan, Rustscan, Amass, Subfinder y + ...
+- **Web**: Nuclei, Nikto, Dalfox, Gobuster, FFUF, WhatWeb y + ...
+- **Explotación**: Metasploit Framework, SQLMap, Hydra, Hashcat y + ...
+- **Red & AD**: NetExec, SMBMap, Enum4linux, Responder, y + ...
 
 *(Nota: Todas las herramientas se ejecutan dentro de contenedores Docker aislados para garantizar la estabilidad y seguridad de su sistema anfitrión).*
 
