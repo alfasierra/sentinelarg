@@ -27,6 +27,17 @@ SentinelArg es una herramienta de evaluación de seguridad ofensiva. Su uso est�
 - Utilizar el software para cualquier actividad ilegal, maliciosa o que viole las leyes locales, nacionales o internacionales de ciberseguridad y protección de datos.
 - Realizar ingeniería inversa, descompilar o intentar obtener el código fuente del software (en su versión compilada/binaria).
 
+## 2.1 Conectividad y Validación de Licencia
+
+El software SentinelArg requiere conectividad periódica al servidor de licencias para validación. El cliente acepta que:
+
+- El software valida la licencia cada 24 horas cuando hay conectividad disponible.
+- En caso de interrupción temporal del servidor de licencias, el software otorga una gracia de 7 días para validación offline.
+- Si el servidor de licencias está caído por más de 7 días, se otorga una gracia extendida de 23 días adicionales (30 días totales) antes del bloqueo.
+- Pasado el período de gracia, el software se bloqueará hasta restablecer la conexión con el servidor de licencias.
+
+**Entornos aislados (air-gapped):** Para clientes que operan en redes sin acceso a internet, SentinelArg ofrece licencias offline con vencimiento embebido y firma criptográfica. Contacte a soporte@sentinelarg.com.ar para opciones Enterprise.
+
 ## 3. Exención de Responsabilidad (DISCLAIMER)
 EL SOFTWARE SE PROPORCIONA "TAL CUAL" (AS IS) Y "SEGÚN DISPONIBILIDAD", SIN GARANTÍAS DE NINGÚN TIPO, EXPRESAS O IMPLÍCITAS, INCLUYENDO, PERO NO LIMITÁNDOSE A, GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN.
 
