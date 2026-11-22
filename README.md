@@ -11,7 +11,7 @@
 
 <div align="center">
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge)](https://sentinelarg.com.ar)
+[![Version](https://img.shields.io/badge/version-1.0.3-blue?style=for-the-badge)](https://sentinelarg.com.ar)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-Proprietary_EULA-red?style=for-the-badge)](EULA.md)
 
